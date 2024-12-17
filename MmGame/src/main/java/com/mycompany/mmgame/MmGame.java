@@ -6,6 +6,7 @@ package com.mycompany.mmgame;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.*;
@@ -14,7 +15,7 @@ import javax.swing.*;
  * @author yussuf ahmed
  */
 public class MmGame {
-
+static List<Color> selectedColors ;
     static int attempts = 10;
     static ImageIcon icon = new ImageIcon("C:\\Users\\yussuf ahmed\\Desktop\\Mastermind_Game_Icon.png");
     static ImageIcon backGround = new ImageIcon("C:\\Users\\yussuf ahmed\\Desktop\\40cdf1d44146da89389f5aeaef145cbe.jpg");
@@ -62,35 +63,35 @@ public class MmGame {
         attemptsLabel.setBackground(Color.blue);
         attemptsLabel.setForeground(Color.red);
         ////////////////////////////////////////////
-        JPanel secretePanel1 = new JPanel();
+       // JPanel secretePanel1 = new JPanel();
         secretePanel1.setFont(new Font("Arial", Font.BOLD, 20));
         secretePanel1.setBounds(15, 150, 90, 50);
         secretePanel1.setBackground(Color.blue);
         secretePanel1.setForeground(Color.red);
         ////////////////////////////////////////////
-        JPanel secretePanel2 = new JPanel();
+       // JPanel secretePanel2 = new JPanel();
         secretePanel2.setFont(new Font("Arial", Font.BOLD, 20));
         secretePanel2.setBounds(110, 150, 90, 50);
         secretePanel2.setBackground(Color.blue);
         secretePanel2.setForeground(Color.red);
         ////////////////////////////////////////////
-        JPanel secretePanel3 = new JPanel();
+       // JPanel secretePanel3 = new JPanel();
         secretePanel3.setFont(new Font("Arial", Font.BOLD, 20));
         secretePanel3.setBounds(205, 150, 90, 50);
         secretePanel3.setBackground(Color.blue);
         secretePanel3.setForeground(Color.red);
         ////////////////////////////////////////////
-        JPanel secretePanel4 = new JPanel();
+        //JPanel secretePanel4 = new JPanel();
         secretePanel4.setFont(new Font("Arial", Font.BOLD, 20));
         secretePanel4.setBounds(300, 150, 90, 50);
         secretePanel4.setBackground(Color.blue);
         secretePanel4.setForeground(Color.red);
         ////////////////////////////////////////////
-        JPanel secretePanel5 = new JPanel();
+       // JPanel secretePanel5 = new JPanel();
         secretePanel5.setFont(new Font("Arial", Font.BOLD, 20));
         secretePanel5.setBounds(395, 150, 90, 50);
         ////////////////////////////////////////////
-        JButton button1 = new JButton("Color 1");
+       // JButton button1 = new JButton("Color 1");
         attemptsPanel.setLayout(new FlowLayout());
         button1.setBounds(15, 5, 90, 50);
         button1.setBackground(gameService.colors.get(4));
@@ -99,28 +100,28 @@ public class MmGame {
         button1.setFont(new Font("Arial", Font.BOLD, 16));
         ;
         //////////////////////////////////////////////
-        JButton button2 = new JButton("Color 2");
+        //JButton button2 = new JButton("Color 2");
         button2.setBounds(110, 5, 90, 50);
         button2.setBackground(gameService.colors.get(4));
         button2.setForeground(Color.MAGENTA);
         button2.setOpaque(true);
         button2.setFont(new Font("Arial", Font.BOLD, 16));
         ////////////////////////////////////////////////////
-        JButton button3 = new JButton("Color 3");
+        //JButton button3 = new JButton("Color 3");
         button3.setBounds(205, 5, 90, 50);
         button3.setBackground(gameService.colors.get(4));
         button3.setForeground(Color.MAGENTA);
         button3.setOpaque(true);
         button3.setFont(new Font("Arial", Font.BOLD, 16));
         ////////////////////////////////////////////////////
-        JButton button4 = new JButton("Color 4");
+        //JButton button4 = new JButton("Color 4");
         button4.setBounds(300, 5, 90, 50);
         button4.setBackground(gameService.colors.get(4));
         button4.setForeground(Color.MAGENTA);
         button4.setOpaque(true);
         button4.setFont(new Font("Arial", Font.BOLD, 16));
         ////////////////////////////////////////////////////
-        JButton button5 = new JButton("Color 5");
+        //JButton button5 = new JButton("Color 5");
         button5.setBounds(395, 5, 90, 50);
         button5.setBackground(gameService.colors.get(4));
         button5.setForeground(Color.MAGENTA);
@@ -267,7 +268,8 @@ public class MmGame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println(submit.getBounds());
-                List<Color> selectedColors = Arrays.asList(button1.getBackground(), button2.getBackground(), button3.getBackground(), button4.getBackground(), button5.getBackground());
+              //  List<Color> selectedColors = Arrays.asList(button1.getBackground(), button2.getBackground(), button3.getBackground(), button4.getBackground(), button5.getBackground());
+              selectedColors = Arrays.asList(button1.getBackground(), button2.getBackground(), button3.getBackground(), button4.getBackground(), button5.getBackground());
                 System.out.println("selected colors: " + selectedColors);
                 System.out.println("secrete code: " + gameService.getSecreteCode());
                 int blackPegs = 0;
@@ -313,5 +315,16 @@ public class MmGame {
         });
 
     }
-
+    static JButton button1 = new JButton("Color 1");
+    static JButton button2 = new JButton("Color 1");
+    static JButton button3 = new JButton("Color 1");
+    static JButton button4 = new JButton("Color 1");
+    static JButton button5 = new JButton("Color 1");
+   // static List<Color> selectedColors = Arrays.asList(button1.getBackground(), button2.getBackground(), button3.getBackground(), button4.getBackground(), button5.getBackground());
+    //static List<Color> copySelectedColors = Arrays.asList(sel);
+    static JPanel secretePanel1 = new JPanel();
+    static JPanel secretePanel2 = new JPanel();
+    static JPanel secretePanel3 = new JPanel();
+    static JPanel secretePanel4 = new JPanel();
+    static JPanel secretePanel5 = new JPanel();
 }
