@@ -25,6 +25,8 @@ static ImageIcon backGround = new ImageIcon(Objects.requireNonNull(MmGame.class.
 // static ImageIcon backGround = new ImageIcon("/backGround.jpg");
 //    static Image scaledIcon = icon.getImage().getScaledInstance(530, 700, Image.SCALE_SMOOTH);
 static ImageIcon icon = new ImageIcon(Objects.requireNonNull(MmGame.class.getResource("/Mastermind_Game_Icon.png")));
+    static ImageIcon winIcon = new ImageIcon(Objects.requireNonNull(MmGame.class.getResource("/winMessage.webp")));
+    static ImageIcon looseIcon = new ImageIcon(Objects.requireNonNull(MmGame.class.getResource("/looseMessage.webp")));
     static Image scaledImage = icon.getImage().getScaledInstance(530, 700, Image.SCALE_SMOOTH);
     static ImageIcon finalIcon = new ImageIcon(scaledImage);
 //frame.setIconImage(finalIcon.getImage());
@@ -231,7 +233,7 @@ static ImageIcon icon = new ImageIcon(Objects.requireNonNull(MmGame.class.getRes
                 System.out.println("secrete code: " + gameService.getSecreteCode());
                 gameService.pegsCounter();
 if(gameService.winChecker()==true){
-    int response = JOptionPane.showConfirmDialog(frame, "You win! Do you want to restart the game?", "Game Over", JOptionPane.YES_NO_OPTION);
+    int response = JOptionPane.showConfirmDialog(frame, "You win! Do you want to restart the game?", "Game Over", JOptionPane.YES_NO_OPTION,JOptionPane.INFORMATION_MESSAGE,winIcon);
 
     if (response == JOptionPane.YES_OPTION) {
         gameService.restartGame();
