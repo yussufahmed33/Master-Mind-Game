@@ -18,19 +18,12 @@ import javax.swing.*;
 public class MmGame {
     static List<Color> selectedColors ;
     static int attempts = 10;
-//    static ImageIcon icon = new ImageIcon("Mastermind_Game_Icon.png");
 static ImageIcon backGround = new ImageIcon(Objects.requireNonNull(MmGame.class.getResource("/backGround.jpg")));
-
-
-// static ImageIcon backGround = new ImageIcon("/backGround.jpg");
-//    static Image scaledIcon = icon.getImage().getScaledInstance(530, 700, Image.SCALE_SMOOTH);
 static ImageIcon icon = new ImageIcon(Objects.requireNonNull(MmGame.class.getResource("/Mastermind_Game_Icon.png")));
     static ImageIcon winIcon = new ImageIcon(Objects.requireNonNull(MmGame.class.getResource("/winMessage.webp")));
     static ImageIcon looseIcon = new ImageIcon(Objects.requireNonNull(MmGame.class.getResource("/looseMessage.webp")));
     static Image scaledImage = icon.getImage().getScaledInstance(530, 700, Image.SCALE_SMOOTH);
     static ImageIcon finalIcon = new ImageIcon(scaledImage);
-//frame.setIconImage(finalIcon.getImage());
-
     static GameService gameService = new GameService();
 
     public static void main(String[] args) {
@@ -38,14 +31,12 @@ static ImageIcon icon = new ImageIcon(Objects.requireNonNull(MmGame.class.getRes
         gameService.generateSecretCode();
         //////////////////////////////////////////////////
         JFrame frame = new JFrame("Master mind game");
-       // ImageIcon finalIcon = new ImageIcon(scaledIcon);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(530, 700);
         frame.setLayout(null);
         frame.setIconImage(finalIcon.getImage());
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
-        //frame.setIconImage(finalIcon.getImage());
         frame.setResizable(true);
         /////////////////////////////////////////////////
         JPanel gamePanel = new JPanel();
@@ -57,8 +48,6 @@ static ImageIcon icon = new ImageIcon(Objects.requireNonNull(MmGame.class.getRes
         //////////////////////////////////////////////
         JLabel gameLabel = new JLabel();
         gameLabel.setBounds(0, 0, frame.getWidth(), frame.getHeight());
-        //gameLabel.setBackground(Color.blue);
-        //gameLabel.setForeground(Color.red);
         gameLabel.setIcon(backGround);
         /////////////////////////////////////////////
         JPanel attemptsPanel = new JPanel();
@@ -68,71 +57,51 @@ static ImageIcon icon = new ImageIcon(Objects.requireNonNull(MmGame.class.getRes
         attemptsPanel.setForeground(Color.red);
         attemptsPanel.setOpaque(false);
         ////////////////////////////////////////////
-        //JLabel attemptsLabel = new JLabel("Attempts: " + attempts);
         attemptsLabel.setFont(new Font("Arial", Font.BOLD, 20));
         attemptsLabel.setBounds(0, 0, attemptsPanel.getWidth(), attemptsPanel.getHeight());
         attemptsLabel.setBackground(Color.blue);
         attemptsLabel.setForeground(Color.red);
         ////////////////////////////////////////////
-       // JPanel secretePanel1 = new JPanel();
         secretePanel1.setFont(new Font("Arial", Font.BOLD, 20));
         secretePanel1.setBounds(15, 150, 90, 50);
-        //secretePanel1.setBackground(Color.blue);
-       // secretePanel1.setForeground(Color.red);
         ////////////////////////////////////////////
-       // JPanel secretePanel2 = new JPanel();
         secretePanel2.setFont(new Font("Arial", Font.BOLD, 20));
         secretePanel2.setBounds(110, 150, 90, 50);
-       // secretePanel2.setBackground(Color.blue);
-       // secretePanel2.setForeground(Color.red);
         ////////////////////////////////////////////
-       // JPanel secretePanel3 = new JPanel();
         secretePanel3.setFont(new Font("Arial", Font.BOLD, 20));
         secretePanel3.setBounds(205, 150, 90, 50);
-       // secretePanel3.setBackground(Color.blue);
-       // secretePanel3.setForeground(Color.red);
         ////////////////////////////////////////////
-        //JPanel secretePanel4 = new JPanel();
         secretePanel4.setFont(new Font("Arial", Font.BOLD, 20));
         secretePanel4.setBounds(300, 150, 90, 50);
-       // secretePanel4.setBackground(Color.blue);
-       // secretePanel4.setForeground(Color.red);
         ////////////////////////////////////////////
-       // JPanel secretePanel5 = new JPanel();
         secretePanel5.setFont(new Font("Arial", Font.BOLD, 20));
         secretePanel5.setBounds(395, 150, 90, 50);
         ////////////////////////////////////////////
-       // JButton button1 = new JButton("Color 1");
         attemptsPanel.setLayout(new FlowLayout());
         button1.setBounds(15, 5, 90, 50);
         button1.setBackground(gameService.colors.get(0));
         button1.setForeground(Color.MAGENTA);
         button1.setOpaque(true);
         button1.setFont(new Font("Arial", Font.BOLD, 16));
-        ;
         //////////////////////////////////////////////
-        //JButton button2 = new JButton("Color 2");
         button2.setBounds(110, 5, 90, 50);
         button2.setBackground(gameService.colors.get(0));
         button2.setForeground(Color.MAGENTA);
         button2.setOpaque(true);
         button2.setFont(new Font("Arial", Font.BOLD, 16));
         ////////////////////////////////////////////////////
-        //JButton button3 = new JButton("Color 3");
         button3.setBounds(205, 5, 90, 50);
         button3.setBackground(gameService.colors.get(0));
         button3.setForeground(Color.MAGENTA);
         button3.setOpaque(true);
         button3.setFont(new Font("Arial", Font.BOLD, 16));
         ////////////////////////////////////////////////////
-        //JButton button4 = new JButton("Color 4");
         button4.setBounds(300, 5, 90, 50);
         button4.setBackground(gameService.colors.get(0));
         button4.setForeground(Color.MAGENTA);
         button4.setOpaque(true);
         button4.setFont(new Font("Arial", Font.BOLD, 16));
         ////////////////////////////////////////////////////
-        //JButton button5 = new JButton("Color 5");
         button5.setBounds(395, 5, 90, 50);
         button5.setBackground(gameService.colors.get(0));
         button5.setForeground(Color.MAGENTA);
@@ -151,12 +120,8 @@ static ImageIcon icon = new ImageIcon(Objects.requireNonNull(MmGame.class.getRes
         pegsPanel.setBounds(0, 400, frame.getWidth(), 50);
         pegsPanel.setBackground(Color.lightGray);
         pegsPanel.setOpaque(true);
-
-        //JLabel whitePegsLabel = new JLabel("White pegs: 0");
         whitePegsLabel.setFont(new Font("Arial", Font.BOLD, 20));
         whitePegsLabel.setForeground(Color.BLACK);
-
-        //JLabel blackPegsLabel = new JLabel("Black pegs: 0");
         blackPegsLabel.setFont(new Font("Arial", Font.BOLD, 20));
         blackPegsLabel.setForeground(Color.BLACK);
 /////////////////////////////////////////////////
@@ -243,7 +208,7 @@ if(gameService.winChecker()==true){
 }
                 else if(gameService.winChecker()==false && attempts==0){
                     attempts=10;
-    int response = JOptionPane.showConfirmDialog(frame, "You loose! Do you want to restart the game?", "Game Over", JOptionPane.YES_NO_OPTION);
+    int response = JOptionPane.showConfirmDialog(frame, "You loose! Do you want to restart the game?", "Game Over", JOptionPane.YES_NO_OPTION,JOptionPane.INFORMATION_MESSAGE,winIcon);
     if (response == JOptionPane.YES_OPTION) {
         gameService.restartGame();
     } else {
