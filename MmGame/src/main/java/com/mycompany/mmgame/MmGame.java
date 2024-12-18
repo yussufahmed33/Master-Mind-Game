@@ -222,10 +222,10 @@ if(gameService.winChecker()==true){
 
     }
     static JButton button1 = new JButton("Color 1");
-    static JButton button2 = new JButton("Color 1");
-    static JButton button3 = new JButton("Color 1");
-    static JButton button4 = new JButton("Color 1");
-    static JButton button5 = new JButton("Color 1");
+    static JButton button2 = new JButton("Color 2");
+    static JButton button3 = new JButton("Color 3");
+    static JButton button4 = new JButton("Color 4");
+    static JButton button5 = new JButton("Color 5");
     static JPanel secretePanel1 = new JPanel();
     static JPanel secretePanel2 = new JPanel();
     static JPanel secretePanel3 = new JPanel();
