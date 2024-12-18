@@ -6,7 +6,6 @@ package com.mycompany.mmgame;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -18,12 +17,14 @@ import javax.swing.*;
 public class MmGame {
     static List<Color> selectedColors ;
     static int attempts = 10;
-static ImageIcon backGround = new ImageIcon(Objects.requireNonNull(MmGame.class.getResource("/backGround.jpg")));
+static ImageIcon backGround = new ImageIcon(Objects.requireNonNull(MmGame.class.getResource("/backGround.jpeg")));
 static ImageIcon icon = new ImageIcon(Objects.requireNonNull(MmGame.class.getResource("/Mastermind_Game_Icon.png")));
     static ImageIcon winIcon = new ImageIcon(Objects.requireNonNull(MmGame.class.getResource("/winMessage.webp")));
     static ImageIcon looseIcon = new ImageIcon(Objects.requireNonNull(MmGame.class.getResource("/looseMessage.webp")));
     static Image scaledImage = icon.getImage().getScaledInstance(530, 700, Image.SCALE_SMOOTH);
+    static Image scaledBack = backGround.getImage().getScaledInstance(530, 700, Image.SCALE_SMOOTH);
     static ImageIcon finalIcon = new ImageIcon(scaledImage);
+    static ImageIcon finalBack = new ImageIcon(scaledBack);
     static GameService gameService = new GameService();
 
     public static void main(String[] args) {
@@ -48,7 +49,7 @@ static ImageIcon icon = new ImageIcon(Objects.requireNonNull(MmGame.class.getRes
         //////////////////////////////////////////////
         JLabel gameLabel = new JLabel();
         gameLabel.setBounds(0, 0, frame.getWidth(), frame.getHeight());
-        gameLabel.setIcon(backGround);
+        gameLabel.setIcon(finalBack);
         /////////////////////////////////////////////
         JPanel attemptsPanel = new JPanel();
         attemptsPanel.setLayout(new FlowLayout());
