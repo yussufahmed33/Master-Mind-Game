@@ -44,10 +44,8 @@ public boolean winChecker(){
             game.secretePanel3.setBackground(getSecreteCode().get(2));
             game.secretePanel4.setBackground(getSecreteCode().get(3));
             game.secretePanel5.setBackground(getSecreteCode().get(4));
-           // game.attempts=10;
                  return false;
         }
-//game.attempts--;
     return false;
 }
 public void pegsCounter(){
@@ -81,7 +79,6 @@ public void buttonColors(int[] i){
         game.button4.setBackground(colors.get(0));
         game.button5.setBackground(colors.get(0));
         generateSecretCode();
-        System.out.println("Game restarted! New secret code generated.");
     }
     }
 

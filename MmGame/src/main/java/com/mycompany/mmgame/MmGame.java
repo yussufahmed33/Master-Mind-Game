@@ -209,7 +209,7 @@ if(gameService.winChecker()==true){
 }
                 else if(gameService.winChecker()==false && attempts==0){
                     attempts=10;
-    int response = JOptionPane.showConfirmDialog(frame, "You loose! Do you want to restart the game?", "Game Over", JOptionPane.YES_NO_OPTION,JOptionPane.INFORMATION_MESSAGE,winIcon);
+    int response = JOptionPane.showConfirmDialog(frame, "You loose! Do you want to restart the game?", "Game Over", JOptionPane.YES_NO_OPTION,JOptionPane.INFORMATION_MESSAGE,looseIcon);
     if (response == JOptionPane.YES_OPTION) {
         gameService.restartGame();
     } else {
