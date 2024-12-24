@@ -28,7 +28,6 @@ static ImageIcon icon = new ImageIcon(Objects.requireNonNull(MmGame.class.getRes
     static GameService gameService = new GameService();
 
     public static void main(String[] args) {
-
         gameService.generateSecretCode();
         //////////////////////////////////////////////////
         JFrame frame = new JFrame("Master mind game");
@@ -38,13 +37,13 @@ static ImageIcon icon = new ImageIcon(Objects.requireNonNull(MmGame.class.getRes
         frame.setIconImage(finalIcon.getImage());
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
-        frame.setResizable(true);
+        //frame.setResizable(true);
         /////////////////////////////////////////////////
         JPanel gamePanel = new JPanel();
         gamePanel.setLayout(new FlowLayout());
         gamePanel.setBounds(0, 500, 530, 200);
         gamePanel.setBackground(Color.red);
-        gamePanel.setForeground(Color.red);
+        gamePanel.setForeground(Color.white);
         gamePanel.setOpaque(false);
         //////////////////////////////////////////////
         JLabel gameLabel = new JLabel();
@@ -63,7 +62,7 @@ static ImageIcon icon = new ImageIcon(Objects.requireNonNull(MmGame.class.getRes
         attemptsLabel.setBackground(Color.blue);
         attemptsLabel.setForeground(Color.red);
         ////////////////////////////////////////////
-        secretePanel1.setFont(new Font("Arial", Font.BOLD, 20));
+       // secretePanel1.setFont(new Font("Arial", Font.BOLD, 20));
         secretePanel1.setBounds(15, 150, 90, 50);
         ////////////////////////////////////////////
         secretePanel2.setFont(new Font("Arial", Font.BOLD, 20));

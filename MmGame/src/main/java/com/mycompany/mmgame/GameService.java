@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Random;
 
 public class GameService {
-    //int[] i = {0};
     private static MmGame game = new MmGame();
     private static List<Color> secretCode;
     public static final List<Color> colors = Arrays.asList(Color.WHITE, Color.RED, Color.GREEN, Color.BLUE, Color.BLACK);
@@ -49,7 +48,7 @@ public boolean winChecker(){
     return false;
 }
 public void pegsCounter(){
-    int blackPegs = 0;
+    int blackPegs=0;
     int witePegs = 0;
     for (int i = 0; i < game.selectedColors.size(); i++) {
         if (game.selectedColors.get(i).equals(getSecreteCode().get(i))) {
